@@ -1,8 +1,8 @@
 resource "aws_elb" "main_elb" {
   name               = var.elb_name
-  subnets = [ split(",", var.elb_subnets) ]
-  internal = var.elb_is_internal
-  security_groups = [ var.elb_security_groups ]
+  subnets            = [ split(",", var.elb_subnets) ]
+  internal           = var.elb_is_internal
+  security_groups    = [ var.elb_security_groups ]
 
 dynamic "listener" {
   for_each = var.listener
